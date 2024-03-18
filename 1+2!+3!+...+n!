@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int factorial(int x)//Find the factorial of ‘n’（n>=0）
+{
+    if(x==0)
+      return 1;
+    else
+      return x*factorial(x-1);
+}
+
+int main()//1+2!+3!+...+n!
+{
+  int n;
+  int sum=0;
+  int i;
+  int ret=0;
+  scanf("%d",&n);
+  for(i=1;i<=n;i++)
+  {
+      int ret=factorial(i);
+      sum=sum+ret;
+  }
+  printf("sum = %d",sum);
+  return 0;
+}
