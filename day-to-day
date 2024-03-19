@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+void print1(int arr[3][5], int x, int y)
+{
+	int i;
+	for (i = 0; i < 3; i++)
+	{
+		int j;
+		for (j = 0; j < 5; j++)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+void print2(int (*p)[5], int x, int y)
+{
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			printf("%d ", *(*(p + i) + j));
+		}
+		printf("\n");
+	}
+}
+
+int main()
+{
+	int arr[3][5] = { {1,2,3,4,5},{2,3,4,5,6},{3,4,5,6,7} };
+	print1(arr, 3, 5);
+	printf("\n");
+	print2(arr, 3, 5);
+	return 0;
+}
